@@ -12,4 +12,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     List<Task> findByStatus(String status);
 
+    List<Task> findByStatusAndCreatorId(String status, String currentUser);
+
 }
