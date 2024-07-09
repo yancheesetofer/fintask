@@ -8,6 +8,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Entity
 @Table(name = "task")
 public class Task {
@@ -21,11 +22,17 @@ public class Task {
     private String description;
     @Getter @Setter
     private String status;
+    @Getter @Setter
+    private String creatorId;
 
-    public Task(String title, String description, String status) {
+    public Task(String title, String description, String status, String creatorId) {
         this.title = title;
         this.description = description;
         this.status = status;
+        this.creatorId = creatorId;
     }
-    //setter getter
+    
+    // default constructor for JPA initiation
+    public Task() {
+    }
 }
