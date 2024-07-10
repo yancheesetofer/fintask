@@ -34,4 +34,10 @@ public class TaskController {
     public List<Task> getTasksByStatus(@PathVariable String status) {
         return taskService.getTasksByStatus(status);
     }
+
+    //missing deleted tasks
+    @DeleteMapping("/{id}")
+    public void deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
+    }
 }
